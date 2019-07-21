@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h2>Todo Dapp, written in JavaScript + Rust (WebAssembly)</h2>
-    <p>Powered by <a href="https://wavelet.perlin.net">Wavelet</a>. Click <a href="https://medium.com/perlin-network/build-a-decentralized-chat-using-javascript-rust-webassembly-c775f8484b52">here</a> to learn how it works, and <a href="https://github.com/perlin-network/decentralized-chat">here</a> for the source code. Join our <a href="https://discord.gg/dMYfDPM">Discord</a> to get PERLs.</p>
+    <p>Powered by <a href="https://wavelet.perlin.net">Wavelet</a>. Click <a href="https://medium.com/@jjmace01/build-a-decentralized-todo-app-using-vue-js-rust-webassembly-5381a1895beb">here</a> to learn how it works, and <a href="https://github.com/johnhorsema/wavelet-todo">here</a> for the source code. Join our <a href="https://discord.gg/dMYfDPM">Discord</a> to get PERLs.</p>
     <input class="nes-input" placeholder="Add todo..." v-on:keyup.enter="addTodo"/>
     <div class="spacer"></div>
     <ol>
