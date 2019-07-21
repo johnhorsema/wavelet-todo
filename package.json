@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "jsbi": "^3.0.0",
+    "vue": "^2.6.10",
+    "wavelet-client": "^1.0.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
