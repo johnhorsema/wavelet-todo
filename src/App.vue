@@ -4,6 +4,7 @@
     <p>Powered by <a href="https://wavelet.perlin.net">Wavelet</a>. Click <a href="https://medium.com/@jjmace01/build-a-decentralized-todo-app-using-vue-js-rust-webassembly-5381a1895beb">here</a> to learn how it works, and <a href="https://github.com/johnhorsema/wavelet-todo">here</a> for the source code. Join our <a href="https://discord.gg/dMYfDPM">Discord</a> to get PERLs.</p>
     <input class="nes-input" placeholder="Add todo..." v-on:keyup.enter="addTodo"/>
     <div class="spacer"></div>
+    <div v-if="todos.length == 0">No todos 🙂</div>
     <ol>
       <li v-for="(todo, idx) in todos">
         <label>
@@ -68,14 +69,19 @@ export default {
     },
     getTodos() {
       var raw = this.$contract.test('get_todos', BigInt(0));
-      this.todos = raw.logs[0].split('\n').reverse().map((a, aidx) => {
-        var matched = a.split(' ');
-        return {
-          id: aidx,
-          content: matched[0].replace(/[\<\>]/g, ''),
-          done: eval(matched[1])
-        }
-      });
+      if(raw.logs[0].length > 0) {
+        this.todos = raw.logs[0].split('\n').reverse().map((a, aidx) => {
+          var matched = a.split(' ');
+          return {
+            id: aidx,
+            content: matched[0].replace(/[\<\>]/g, ''),
+            done: eval(matched[1])
+          }
+        });
+      }
+      else {
+        this.todos = []
+      }
     },
     async addTodo({target}) {
       var self = this
