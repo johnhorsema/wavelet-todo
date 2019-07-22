@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+SECRET
 
 # local env files
 .env.local
