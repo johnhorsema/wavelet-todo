@@ -71,7 +71,7 @@ export default {
       var raw = this.$contract.test('get_todos', BigInt(0));
       if(raw.logs[0].indexOf('\n') !== -1) {
         this.todos = raw.logs[0].split('\n').reverse().map((a, aidx) => {
-          var matched = a.split(' ');
+          var matched = a.split('> ');
           return {
             id: aidx,
             content: matched[0].replace(/[\<\>]/g, ''),
