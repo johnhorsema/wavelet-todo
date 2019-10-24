@@ -90,6 +90,7 @@ export default {
         'add_todo', 
         BigInt(0), 
         BigInt(250000),
+        BigInt(0),
         {type: "string", value: target.value},
       ).then(resp => {
         target.value = '';
@@ -103,6 +104,7 @@ export default {
         'remove_todo', 
         BigInt(0), 
         BigInt(250000),
+        BigInt(0),
         {type: "uint32", value: id},
       ).then(resp => {
         self.log.push(resp.tx_id);
@@ -115,6 +117,7 @@ export default {
         'toggle_todo', 
         BigInt(0), 
         BigInt(250000),
+        BigInt(0),
         {type: "uint32", value: id},
       ).then(resp => {
         self.log.push(resp.tx_id);
